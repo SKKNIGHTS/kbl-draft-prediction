@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>드래프트 예측</title>
+</head>
+<body>
+  <h2>{{ user }}님의 드래프트 예측</h2>
+  <form method="post">
+    {% for i in range(1, 11) %}
+      <label>{{ i }}위</label>
+      <select name="rank{{ i }}">
+        {% for p in players %}
+          <option value="{{ p }}">{{ p }}</option>
+        {% endfor %}
+      </select><br><br>
+    {% endfor %}
+    <button type="submit">제출</button>
+  </form>
+</body>
+</html>
