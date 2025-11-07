@@ -5,7 +5,7 @@ import Result from "./pages/Result";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/kbl-draft-prediction">
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/vote" element={<Vote />} />
