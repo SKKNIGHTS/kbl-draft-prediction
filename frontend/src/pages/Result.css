@@ -101,3 +101,93 @@
 .result-table td {
   background-color: #ffffff;
 }
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* 🔥 로그인으로 돌아가기 버튼 강화 버전 */
+.go-login-btn {
+  background-color: #2563eb; /* 진한 파랑 */
+  color: white;
+  border: none;
+  padding: 12px 24px; /* ✅ 버튼 크기 확대 */
+  border-radius: 8px;
+  font-size: 1.05rem; /* ✅ 글씨 크기 키움 */
+  font-weight: 600; /* ✅ 글씨 두께 강화 */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3); /* 살짝 그림자 */
+}
+
+.go-login-btn:hover {
+  background-color: #1e40af; /* hover 시 더 진한 파랑 */
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(30, 64, 175, 0.4);
+}
+
+.go-login-btn:active {
+  background-color: #1e3a8a; /* 클릭 시 어두운 파랑 */
+  transform: translateY(1px);
+}
+
+/* ✅ 페이지 전체 폰트 기본 크기 */
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  font-family: "Noto Sans KR", sans-serif;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ✅ 제목 */
+.result-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 16px;
+}
+
+/* ✅ 하단 버튼 고정 영역 */
+.bottom-btn-container {
+  position: fixed;          /* ✅ 화면 하단 고정 */
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* 🔥 버튼 글씨색 고정 + 시각적 개선 */
+.go-login-btn {
+  background-color: #2563eb !important; /* 강제 파랑 배경 */
+  color: #ffffff !important;           /* ✅ 강제 흰색 글씨 */
+  border: none;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;                    /* ✅ 글씨 더 두껍게 */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* ✅ 글씨 대비 향상 */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+.go-login-btn:hover {
+  background-color: #1e40af !important;
+  color: #ffffff !important; /* hover 시에도 고정 */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(30, 64, 175, 0.4);
+}
+
+.go-login-btn:active {
+  background-color: #1e3a8a !important;
+  color: #ffffff !important; /* 클릭 시에도 고정 */
+  transform: translateY(1px);
+}
+

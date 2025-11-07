@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../api";
 import "./Result.css";
 
@@ -8,6 +9,7 @@ export default function Result() {
   const [selectedUser, setSelectedUser] = useState(null);
   const [error, setError] = useState(null);
   const username = localStorage.getItem("username");
+  const navigate = useNavigate();
 
   // 데이터 불러오기
   const loadData = () => {
@@ -39,6 +41,10 @@ export default function Result() {
     }
   };
 
+  const handleGoLogin = () => {
+     navigate("/"); // ✅ Login 페이지로 이동
+   };
+
   if (error) {
     return <div style={{ padding: 20, color: "red" }}>{error}</div>;
   }
@@ -64,7 +70,8 @@ export default function Result() {
 
   return (
     <div className="result-container">
-      <h1>🏀 전체 투표 기록</h1>
+      <h1 className="result-title">🏀 전체 투표 기록 🏀</h1>
+
       <p>총 투표자 수: {uniqueUsers.length}</p>
 
       <div className="user-list">
@@ -112,6 +119,11 @@ export default function Result() {
             )}
           </div>
         ))}
+      </div>
+      <div className="bottom-btn-container">
+        <button onClick={handleGoLogin} className="go-login-btn">
+        ← 로그인으로 돌아가기
+        </button>
       </div>
     </div>
   );

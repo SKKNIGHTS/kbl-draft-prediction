@@ -1,3 +1,6 @@
+/* ==============================
+   전체 컨테이너
+============================== */
 .vote-container {
   display: flex;
   flex-direction: row;
@@ -9,7 +12,22 @@
   font-family: "Noto Sans KR", sans-serif;
 }
 
-/* 공통 컬럼 */
+/* ✅ 좌우 폰트/색상/두께 완전 통일 */
+.vote-container,
+.vote-column,
+.teams-column,
+.player-card,
+.team-slot,
+.team-player {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* ==============================
+   왼쪽: 전체 선수 목록
+============================== */
 .vote-column {
   flex: 1;
   display: flex;
@@ -30,7 +48,6 @@
   margin-bottom: 16px;
 }
 
-/* 전체 선수 목록 */
 .player-card {
   background-color: #f9fafb;
   border: 1px solid #e2e8f0;
@@ -49,8 +66,15 @@
 .player-info {
   display: flex;
   justify-content: space-between;
+}
+
+.player-name {
   font-weight: 600;
   color: #1e293b;
+}
+
+.player-pos {
+  color: #475569;
 }
 
 .player-school {
@@ -59,49 +83,98 @@
   margin-top: 4px;
 }
 
-/* 순위 카드 */
-.rank-card {
-  background-color: #f8fafc;
-  border: 1px solid #cbd5e1;
+/* ==============================
+   오른쪽: 팀별 슬롯
+============================== */
+.teams-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  overflow-y: auto;
+  height: 82vh;
+
+  /* 💥 명시적으로 왼쪽과 동일하게 강제 */
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.teams-column h2 {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 16px;
+}
+
+.team-slot {
+  border: 2px dashed #cbd5e1;
   border-radius: 10px;
   padding: 12px 16px;
-  margin: 8px 0;
+  margin-bottom: 12px;
+  background-color: #f9fafb;
+  min-height: 60px;
+  transition: background 0.2s ease-in-out;
+}
+
+.team-slot:hover {
+  background-color: #e0e7ff;
+}
+
+.team-label {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.team-player {
+  background-color: #f9fafb;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-top: 6px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  cursor: grab;
   transition: all 0.2s ease-in-out;
 }
 
-.rank-card:hover {
-  background-color: #f1f5f9;
+.team-player:hover {
+  background-color: #e0e7ff;
   transform: translateY(-2px);
 }
 
-.rank-number {
-  font-weight: 700;
-  color: #2563eb;
-  min-width: 40px;
-  text-align: center;
-}
-
-.rank-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.rank-name {
-  font-weight: 600;
+.team-player span {
   color: #1e293b;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
-.rank-school {
+.team-school {
   font-size: 0.9rem;
   color: #475569;
+  margin-left: 8px;
 }
 
-/* 버튼 그룹 */
+.empty-slot {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-style: italic;
+  padding: 4px 0;
+}
+
+/* ==============================
+   버튼 그룹
+============================== */
 .vote-controls {
-  margin-top: auto;
+  margin-top: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
